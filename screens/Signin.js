@@ -6,8 +6,8 @@ export default class Signup extends Component {
 {
     super(props);
     this.state={
-        email: 'opencloudsys@gmail.com',
-        pass: 'Miami123',
+        email: '',
+        pass: '',
     };
 }
     render(){
@@ -34,7 +34,7 @@ export default class Signup extends Component {
                                 <TouchableOpacity style={{flex:.1,alignItems:'flex-end',width:'95%',paddingTop:5}}>
                                     <Text style={{fontSize:18,color:'#d9d9d9'}}>Forget Password?</Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity  onPress={()=>{alert('asd')}} style={{flex:.1,alignSelf:'center',width:100,height:100,position:'absolute',top:250}}>
+                                <TouchableOpacity  onPress={()=>{this.props.navigation.navigate('App')}} style={{flex:.1,alignSelf:'center',width:100,height:100,position:'absolute',top:250}}>
                                     <Image source={require('../images/Login.png')} style={{width:100,height:100,}} />
                                 </TouchableOpacity>
                             </View>

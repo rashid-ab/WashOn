@@ -8,8 +8,8 @@ export default class Signup extends Component {
 {
     super(props);
     this.state={
-        email: 'opencloudsys@gmail.com',
-        pass: 'Miami123',
+        email:'',
+        pass: '',
     };
 }
     render(){

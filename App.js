@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Navigation from './screens/components/Navigation';
+import Root from './Root';
 export default function App() {
   return (
-    <Navigation />
+    <Root />
   );
 }
 

@@ -63,7 +63,7 @@ const SwitchNavigator = createStackNavigator({
           {
             initialRouteName:'signin',
             defaultNavigationOptions:{
-            header:null
+                headerShown:false
             }
     }),
     App:AppNavigator,
@@ -71,7 +71,7 @@ const SwitchNavigator = createStackNavigator({
   },{
     initialRouteName:'Auth',
     defaultNavigationOptions:{
-    header:null
+        headerShown:false
     },
 });
   

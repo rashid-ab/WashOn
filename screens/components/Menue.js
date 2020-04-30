@@ -49,6 +49,7 @@ export default class Menue extends Component {
     }
     
     render() {
+      console.log(this.props)
       return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', }}>
           <Modal

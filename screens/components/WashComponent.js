@@ -3,7 +3,7 @@ import {TouchableOpacity,StatusBar ,StyleSheet,Keyboard,SafeAreaView ,TextInput 
 
 
 
-export default class Home extends Component {
+export default class WashComponent extends Component {
     constructor(props)
 {
     super(props);
@@ -14,8 +14,9 @@ export default class Home extends Component {
 }
     render(){
   return (
-    <View style={{flex:1,backgroundColor:'white'}}>
-        <StatusBar barStyle = "white" backgroundColor = '#fc6203'/>
+    <View style={{flex:1}}>
+        
+        
     </View>
   );
 }

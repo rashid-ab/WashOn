@@ -22,7 +22,23 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
-    }
+      "supportsTablet": true,
+      "bundleIdentifier": "com.Wash.On",
+      "splash": {
+        "image": "./assets/splash.png",
+        "resizeMode": "cover"
+      }
+    },
+    "android": {
+      "package": "com.Wash.On",
+      "splash": {
+        "mdpi": "./assets/splash.png",
+        "hdpi": "./assets/splash.png",
+        "xhdpi": "./assets/splash.png",
+        "xxhdpi": "./assets/splash.png",
+        "xxxhdpi": "./assets/splash.png",
+        "resizeMode": "cover"
+      }
+      }
   }
 }

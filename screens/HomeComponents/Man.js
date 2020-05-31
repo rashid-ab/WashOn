@@ -8,18 +8,18 @@ export default class Home extends Component {
     super(props);
     this.state={
       data:[
-        {id:'0',image:'../images/1.png',price:'6.00',title:'T-Shirt',quantity:0},
-        {id:'1',image:'../images/1.png',price:'6.00',title:'T-Shirt',quantity:0},
-        {id:'2',image:'../images/1.png',price:'6.00',title:'T-Shirt',quantity:0},
-        {id:'3',image:'../images/1.png',price:'6.00',title:'T-Shirt',quantity:0},
-        {id:'4',image:'../images/1.png',price:'6.00',title:'T-Shirt',quantity:0},
-        {id:'5',image:'../images/1.png',price:'6.00',title:'T-Shirt',quantity:0},
-        {id:'6',image:'../images/1.png',price:'6.00',title:'T-Shirt',quantity:0},
-        {id:'7',image:'../images/1.png',price:'6.00',title:'T-Shirt',quantity:0},
-        {id:'8',image:'../images/1.png',price:'6.00',title:'T-Shirt',quantity:0},
-        {id:'9',image:'../images/1.png',price:'6.00',title:'T-Shirt',quantity:0},
-        {id:'10',image:'../images/1.png',price:'6.00',title:'T-Shirt',quantity:0},
-        {id:'11',image:'../images/1.png',price:'6.00',title:'T-Shirt',quantity:0},
+        {id:'0',image:'../../images/unnamed.png',price:'6.00',title:'T-Shirt',quantity:0},
+        {id:'1',image:'../../images/unnamed.png',price:'6.00',title:'Pant',quantity:0},
+        {id:'2',image:'../../images/unnamed.png',price:'6.00',title:'Trouser',quantity:0},
+        // {id:'3',image:'../../images/unnamed.png',price:'6.00',title:'T-Shirt',quantity:0},
+        // {id:'4',image:'../../images/unnamed.png',price:'6.00',title:'T-Shirt',quantity:0},
+        // {id:'5',image:'../../images/unnamed.png',price:'6.00',title:'T-Shirt',quantity:0},
+        // {id:'6',image:'../../images/unnamed.png',price:'6.00',title:'T-Shirt',quantity:0},
+        // {id:'7',image:'../../images/unnamed.png',price:'6.00',title:'T-Shirt',quantity:0},
+        // {id:'8',image:'../../images/unnamed.png',price:'6.00',title:'T-Shirt',quantity:0},
+        // {id:'9',image:'../../images/unnamed.png',price:'6.00',title:'T-Shirt',quantity:0},
+        // {id:'10',image:'../../images/unnamed.png',price:'6.00',title:'T-Shirt',quantity:0},
+        // {id:'11',image:'../../images/unnamed.png',price:'6.00',title:'T-Shirt',quantity:0},
       ]};
 }
     render(){
@@ -27,14 +27,14 @@ export default class Home extends Component {
     <View style={{flex:1}}>
       <FlatList 
           data={this.state.data}
-          contentContainerStyle={{paddingRight: 20}}
+          // contentContainerStyle={{paddingRight: 20}}
           refreshControl={
             <RefreshControl 
               refreshing={this.state.isLoading}
               onRefresh={()=>this.componentDidMount()}/>
           }
           renderItem={({ item, index }) => (
-            <WashComponent index={item.id} image ={item.image} price={item.price} title={item.title} quantity={item.quantity} navigation={this.props.navigation}  />
+            <WashComponent index={item.id} image ={item.image} data={this.state.data} price={item.price} title={item.title} quantity={item.quantity} navigation={this.props.navigation}  />
           )}
           keyExtractor={(item, index) => index.toString()}
         />

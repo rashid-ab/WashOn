@@ -1,6 +1,8 @@
-  import {MENU,LOGOUT} from '../actions/actionTypes'
+  import {MENU,ORDER} from '../actions/actionTypes';
   const INITIAL_STATE = {
     menu:'',
+    order:[],
+    count:''
   };
 
   const reducer = (state = INITIAL_STATE, action) => {
@@ -11,10 +13,17 @@
           ...state,
           menu: action.payload
         }
-      case LOGOUT:
-        return{
-            menu:''
-        }
+      // case LOGOUT:
+      //   return{
+      //       menu:''
+      //   }
+        case ORDER:
+          // const data=[]
+          // data.push(action.payload)
+          return {
+            ...state,
+            order:action.payload
+          }
       default:
         return {...state}
     }

@@ -16,6 +16,7 @@ import Man from '../HomeComponents/Man';
 import Woman from '../HomeComponents/Woman';
 import Children from '../HomeComponents/Children';
 import Bedding from '../HomeComponents/Bedding';
+import Bag from '../OrderComponents/Bag';
 import Notification from '../Notification';
 import Earn from '../Earn';
 import Aboutus from '../Aboutus';
@@ -114,6 +115,9 @@ const AppNavigator = createStackNavigator({
   },
   Settings:{
       screen:Settings,navigationOptions:({navigation})=>({headerLeft:<Menue navigation={navigation}/>})
+  },
+  Bag:{
+    screen:Bag,navigationOptions:({navigation})=>({headerLeft:<Menue navigation={navigation}/>})
   },
   Wash:{
     screen:myTopTab,navigationOptions:{}

@@ -18,7 +18,7 @@ import {ORDER} from '../../actions/actionTypes'
       
     };
 }
-checkData = (check,index,orderData) =>{
+AddData = (check,index,orderData) =>{
   // console.log(this.state.check)
   if(check == true)
   {
@@ -42,7 +42,32 @@ checkData = (check,index,orderData) =>{
     return
   }
 }
+MinusData = (check,index,orderData) =>{
+  // console.log(this.state.check)
+  if(check == true)
+  {
+    orderData[index].price=this.props.price*(this.state.quantity-1)
+    orderData[index].quantity=this.state.quantity-1
+    orderData[index].title=this.props.title
+    orderData[index].rate=this.props.price
+    this.props.setOrder(orderData)
+    console.log(orderData)
+    return;
+  }
+  else
+  {
+    const orderDetail=this.state.Data;
+    orderDetail.price=this.props.price*(this.state.quantity-1)
+    orderDetail.quantity=1
+    orderDetail.title=this.props.title
+    orderDetail.rate=this.props.price
+    orderData.push(orderDetail)
+    this.props.setOrder(orderData)
+    return
+  }
+}
 qauntities = (text) => {
+  return this.props.navigation.navigate('Bag');
         if(text=='Plus'){
           // console.log(this.props.order)
             if(this.props.order.length>0){
@@ -56,17 +81,16 @@ qauntities = (text) => {
                       // console.log(j)
                     check=true;
                     this.setState({quantity:this.state.quantity+1})
-                    return this.checkData(check,j,orderData)
+                    return this.AddData(check,j,orderData)
                 }
               }
               console.log('zxc')
-              this.checkData(check,null,orderData)
+              this.AddData(check,null,orderData)
               this.setState({quantity:this.state.quantity+1})
             }
         else{
           console.log('ert')
               const orderDetail=this.state.Data;
-              // const orderdata=this.props.order
               var quantity=this.state.quantity
               orderDetail.price=this.props.price*(quantity+1)
               orderDetail.quantity=1
@@ -84,29 +108,21 @@ qauntities = (text) => {
             if(this.props.order.length>0){
               const quantityarray=this.state.Data;
               const orderData=this.props.order
-              // quantityarray.price=this.props.price*(this.state.quantity-1)
-              // quantityarray.quantity=this.state.quantity-1
-              // quantityarray.title=this.props.title
-              // quantityarray.rate=this.props.price
-              this.setState({quantity:this.state.quantity-1})
-              orderData.map((item,index) => {
-              if(item.title==this.props.title){
-                orderData[index]={
-                  price:this.props.price*(this.props.order[index].quantity-1),
-                  quantity:this.props.order[index].quantity-1,
-                  rate:this.props.price,
-                  title:this.props.order[index].title
+              let check=false
+              for(let j=0; j<orderData.length; j++){
+                // console.log(orderData)
+                // console.log(this.props.title)
+                if(orderData[j].title==this.props.title){
+                      // console.log(j)
+                    check=true;
+                    this.setState({quantity:this.state.quantity-1})
+                    return this.MinusData(check,j,orderData)
                 }
               }
-              if(orderData[index].quantity != this.props.order[index].quantity)
-              {
-                console.log('true')
-              }
-              this.checkData(orderData,index,quantityarray)
-
-            })
-              // console.log(this.props.order)
-          }
+              console.log('zxc')
+              this.MinusData(check,null,orderData)
+              this.setState({quantity:this.state.quantity-1})
+            }
         // else{
         //       const quantityarray=this.state.Data;
         //       const orderData=this.props.order
